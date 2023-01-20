@@ -21,14 +21,14 @@ void QuickSort(int left, int right, vector<int>& vec) {
   if (left >= right) {
     return;
   }
-  int i = left+1;
-  int j = right;
+  int i = left;
+  int j = right+1;
   while(i!=j) {
-    while (i+1 < sz && vec[i] < vec[left]) {
-      i++;
+    while (i+1 < sz && vec[++i] < vec[left]) {
+      // void
     }
-    while (j-1 >= 0 && vec[j] > vec[left]) {
-      j--;
+    while (j-1 >= 0 && vec[--j] > vec[left]) {
+      // void
     }
     if (i >= j) {
       break;
