@@ -10,6 +10,7 @@
 using std::vector;
 using std::swap;
 
+
 void QuickSort(int left, int right, vector<int>& vec);
 
 void QuickSort(vector<int>& vec) {
@@ -21,19 +22,18 @@ void QuickSort(int left, int right, vector<int>& vec) {
   if (left >= right) {
     return;
   }
-  int i = left;
-  int j = right+1;
-  while(i!=j) {
-    while (i+1 < sz && vec[++i] < vec[left]) {
-      // void
+  int key = left;
+  int i = left+1;
+  int j = right;
+
+  while(i<=j) { // 細節
+    if (vec[i] < vec[left]) {
+        i++;
+    } else if (vec[j] >= vec[left]) {
+        j--;
+    } else {
+        swap(vec[i], vec[j]);
     }
-    while (j-1 >= 0 && vec[--j] > vec[left]) {
-      // void
-    }
-    if (i >= j) {
-      break;
-    }
-    swap(vec[i], vec[j]);
   }
   swap(vec[left], vec[j]);
 

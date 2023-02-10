@@ -11,8 +11,8 @@ void MergeSort(vector<int>& vec, int left, int right, vector<int>& temp);
 void Merge(vector<int> & vec, int left, int mid, int right, vector<int>& temp);
 
 void MergeSort(vector<int>& vec) {
-  vector<int> result(vec.size());
-  MergeSort(vec, 0, vec.size()-1, result);
+  vector<int> temp(vec.size());
+  MergeSort(vec, 0, vec.size() - 1, temp);
 }
 
 void MergeSort(vector<int>& vec, int left, int right, vector<int>& temp) {
