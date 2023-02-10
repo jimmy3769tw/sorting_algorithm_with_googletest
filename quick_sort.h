@@ -37,7 +37,7 @@ void QuickSort(int left, int right, vector<int>& vec) {
   }
   swap(vec[left], vec[j]);
 
-  QuickSort(left, j-1, vec);
+  QuickSort(left, j, vec);
   QuickSort(j+1, right, vec);
 }
 #endif //SORT__QUICK_SORT_H_
